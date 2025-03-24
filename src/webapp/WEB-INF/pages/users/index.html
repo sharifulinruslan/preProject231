@@ -25,6 +25,8 @@
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getAge()}"></td>
         <td>
+            <a th:href="@{/users/detailed_show(id=${user.getId()})}">Detailed view</a>
+            </br>
             <a th:href="@{/users/edit(id=${user.getId()})}">Edit</a>
             <form th:action="@{/users/delete(id=${user.getId()})}" method="post">
                 <button type="submit">Delete</button>
