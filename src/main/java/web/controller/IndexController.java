@@ -35,4 +35,10 @@ public class IndexController {
         userService.deleteUser(id);
         return ("redirect:/users");
     }
+
+    @GetMapping("/detailed_show")
+    public String getDetailedShowAboutUser(Model model, @RequestParam("id") int id) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "users/detailed_show";
+    }
 }
