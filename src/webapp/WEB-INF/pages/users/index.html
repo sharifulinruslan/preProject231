@@ -6,7 +6,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>List of Users</h1>
+<h1>Number of users: <span th:text="${users.size()}"></span></h1>
 
 <h2><a th:href="@{/users/create}">Create new user</a></h2>
 
