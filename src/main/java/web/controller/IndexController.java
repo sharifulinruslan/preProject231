@@ -43,6 +43,12 @@ public class IndexController {
         return "users/detailed_show";
     }
 
+    @GetMapping("/{id}")
+    public String getDetailedShowAboutUserByPathVariable(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "users/show";
+    }
+
     @GetMapping("/edit")
     public String editUserPage(Model model, @RequestParam("id") int id) {
         model.addAttribute("user", userService.getUserById(id));
